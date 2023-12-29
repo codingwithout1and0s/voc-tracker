@@ -18,7 +18,7 @@ const Comments = () => {
     // Column Definitions: Defines & controls grid columns.
     const [colDefs, setColDefs] = useState([
         { field: "Date" },
-        { field: "Voice Feedback" },
+        { field: "Voice Feedback",  width: 1450, wrapText: true, autoHeight:true },
         { field: "ContactID" },
         { field: "Loan" },
         { field: "AHT" },
@@ -28,7 +28,6 @@ const Comments = () => {
 
     return (
         <div className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}>
-            {/* The AG Grid component */}
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </div>
     )
