@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import Progress from 'react-circle-progress-bar'
 
@@ -5,8 +6,15 @@ const Stats = () => {
     const subtitle_bar1 = 'Bar 1';
     const subtitle_bar2 = 'Bar 2';
     const subtitle_bar3 = 'Bar 3';
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/full-stats");
+    }
+
     return (
-        <>
+        <div onClick={handleClick}>
             <Container fluid className='mb-2 bg-secondary py-3'>
                 <Row className='text-center text-white'>
                     <Col>
@@ -23,7 +31,7 @@ const Stats = () => {
                     </Col>
                 </Row>
             </Container>
-        </>
+        </div>
     );
 }
 

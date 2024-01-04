@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { AgGridReact } from 'ag-grid-react' // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css" // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css" // Theme
@@ -26,8 +27,17 @@ const Comments = () => {
 
     ]);
 
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/full-comments");
+    }
+
     return (
-        <div className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}>
+        <div 
+            className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}
+            onClick={handleClick}
+        >
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </div>
     )
