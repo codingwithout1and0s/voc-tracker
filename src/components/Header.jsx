@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { ImStatsBars } from "react-icons/im";
 
@@ -7,10 +8,10 @@ const Header = () => {
             <Navbar bg="dark" data-bs-theme="dark" className='mb-5'>
                 <Container>
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
-                    <Navbar.Brand href="#home" className='mx-5'>VOC Tracker</Navbar.Brand>
+                    <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#stats">Stats</Nav.Link>
-                        <Nav.Link href="#comments">Comments</Nav.Link>
+                        <Nav.Link><Link to="/full-stats">Stats</Link></Nav.Link>
+                        <Nav.Link><Link to="/full-comments">Comments</Link></Nav.Link>
                     </Nav>
                         <Navbar.Text className="justify-content-end">
                             <NavDropdown title="User" id="navbarScrollingDropdown" className='d-inline'>
