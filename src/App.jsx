@@ -4,6 +4,7 @@ import './styles/styles.css'
 import Header from './components/Header'
 import FullStats from './components/FullStats'
 import FullComments from './components/FullComments'
+import Charts from './components/Charts'
 import Home from './Pages/Home'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="full-stats" element={<FullStats />} />
           <Route path="full-comments" element={<FullComments /> } />
         </Routes>
+        <Charts />
       </Router>
     </>
   )
