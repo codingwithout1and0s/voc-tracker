@@ -1,27 +1,73 @@
-import { Chart } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
 
 const Charts = () => {
 
-    const mixedChart = new Chart(ctx, {
-        data: {
-            datasets: [{
-                type: 'bar',
-                label: 'Bar Dataset',
-                data: [10, 20, 30, 40]
-            }, {
-                type: 'line',
-                label: 'Line Dataset',
-                data: [50, 50, 50, 50],
-            }],
-            labels: ['January', 'February', 'March', 'April']
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Filler,
+        Legend
+      );
+
+    const options = {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top'
+          },
+          title: {
+            display: true,
+            text: 'VOC CSAT (Year-To-Date)',
+          },
         },
-        options: options
-    });
+      };
+      
+      const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'];
+      const scores = [5.00, 1.00, 3.00, 5.00, 4.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00 ] 
+
+      const data = {
+        labels,
+        datasets: [
+          {
+            fill: true,
+            label: 'AVG CSAT',
+            data: scores,
+            // data: labels.map(() => faker.datatype.number({ min: 0, max: 5.00 })),
+            borderColor: 'rgb(53, 162, 235)',
+            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+          },
+        ],
+      };
 
     return (
-        <div>
-            <h1>Charts</h1>
-            <canvas id="mixedChart" style="width:100%;max-width:700px"></canvas>
+        <div className='mt-5'>
+          <div className='mx-5 d-flex border border-1'>
+            <p className='d-flex align-items-center my-1'>Time Range: </p>
+            <select className='mx-2 px-3'>
+              <option>Daily</option>
+              <option>MTD</option>
+              <option>YTD</option>
+            </select>
+          </div>
+
+
+            <Line options={options} data={data} />;
         </div>
     );
 }

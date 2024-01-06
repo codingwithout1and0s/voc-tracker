@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from 'ag-grid-react' // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css" // Core CSS
@@ -32,12 +32,17 @@ const Comments = () => {
     const handleClick = () => {
         navigate("/full-comments");
     }
+    
+    useEffect(() =>{
+        console.log(rowData[1].CSAT);
+    },[])
 
     return (
         <div 
             className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}
             onClick={handleClick}
         >
+           {rowData.map((item) => <p>CSAT: {rowData[item]}</p>)}
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </div>
     )
