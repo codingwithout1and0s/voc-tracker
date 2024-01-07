@@ -1,5 +1,6 @@
 import Stats from '../components/Stats'
 import Comments from '../components/Comments'
+import Charts from '../components/Charts'
 
 function Home() {
 
@@ -7,6 +8,7 @@ function Home() {
     <div>
         <Stats />
         <Comments />
+        <Charts />
     </div>
   )
 }

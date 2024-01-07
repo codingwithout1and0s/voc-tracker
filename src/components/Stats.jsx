@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { CSATContext } from '../Contexts/CSATContext';
+import { CSATContext } from '../Contexts/Contexts';
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import Progress from 'react-circle-progress-bar'

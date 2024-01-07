@@ -1,8 +1,11 @@
+import { useContext } from 'react'
+import { LoginContext } from '../Contexts/Contexts'
 import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { ImStatsBars } from "react-icons/im";
 
 const Header = () => {
+    const { Login } = useContext(LoginContext);
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark" className='mb-5'>
@@ -14,7 +17,7 @@ const Header = () => {
                         <Nav.Link><Link to="/full-comments">Comments</Link></Nav.Link>
                     </Nav>
                         <Navbar.Text className="justify-content-end">
-                            <NavDropdown title="User" id="navbarScrollingDropdown" className='d-inline'>
+                            <NavDropdown title={Login.loggedin ? Login.username : "Login"} id="navbarScrollingDropdown" className='d-inline'>
                                 <NavDropdown.Item href="#action3">
                                     Logout
                                 </NavDropdown.Item>
