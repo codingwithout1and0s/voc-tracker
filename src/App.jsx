@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './styles/styles.css'
 
 import Header from './components/Header'
@@ -7,10 +8,15 @@ import FullComments from './components/FullComments'
 import Charts from './components/Charts'
 import Home from './Pages/Home'
 
+import { CSATContext } from './Contexts/CSATContext'
+
 function App() {
+
+  const [avgCsat, setAvgCsat] = useState(0);
 
   return (
     <>
+      <CSATContext.Provider value={{ avgCsat, setAvgCsat }}>
       <Router>
         <Header />
         <Routes>
@@ -22,6 +28,7 @@ function App() {
         </Routes>
         <Charts />
       </Router>
+      </CSATContext.Provider>
     </>
   )
 }

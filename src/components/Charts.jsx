@@ -10,7 +10,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
 
 const Charts = () => {
 
@@ -48,7 +47,6 @@ const Charts = () => {
             fill: true,
             label: 'AVG CSAT',
             data: scores,
-            // data: labels.map(() => faker.datatype.number({ min: 0, max: 5.00 })),
             borderColor: 'rgb(53, 162, 235)',
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
           },

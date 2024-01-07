@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { CSATContext } from '../Contexts/CSATContext';
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from 'ag-grid-react' // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css" // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css" // Theme
 
 const Comments = () => {
+
+    const { setAvgCsat } = useContext(CSATContext);
 
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([
@@ -27,22 +30,25 @@ const Comments = () => {
 
     ]);
 
+    useEffect(() => {
+        setAvgCsat(currAvgCSAT);
+    },[rowData])
+
     const navigate = useNavigate();
 
     const handleClick = () => {
         navigate("/full-comments");
     }
-    
-    useEffect(() =>{
-        console.log(rowData[1].CSAT);
-    },[])
+
+    const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
 
     return (
         <div 
             className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}
             onClick={handleClick}
         >
-           {rowData.map((item) => <p>CSAT: {rowData[item]}</p>)}
+            {/* {rowData.map((item) => <p>CSAT: {item.CSAT}</p>)} */}
+            <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </div>
     )
