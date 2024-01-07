@@ -6,7 +6,7 @@ import Header from './components/Header'
 import FullStats from './components/FullStats'
 import FullComments from './components/FullComments'
 import Home from './Pages/Home'
-import LoginPage from  './Pages/Login'
+import LoginPage from './Pages/LoginPage'
 
 import { LoginContext, CSATContext } from './Contexts/Contexts'
 
