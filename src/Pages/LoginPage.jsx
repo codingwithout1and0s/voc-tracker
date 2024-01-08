@@ -1,13 +1,33 @@
-import { useContext } from 'react'
-import { LoginContext } from '../Contexts/Contexts'
+import { useAuth } from '../Contexts/AuthContext'
+import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 
 const LoginPage = () => {
 
-    // const { setLogin } = useContext(LoginContext);
+    const { authUser, setAuthUser, setIsLoggedIn } = useAuth();
+
+    const navigate = useNavigate();
+
+    const logIn = (e) => {
+        e.preventDefault();
+        setIsLoggedIn(true);
+        setAuthUser({
+            Name: 'Kevin'
+        });
+
+        // if(authUser != null){
+        //     navigate("/home");
+        // }
+    }
+
+    const logOut = (e) => {
+        e.preventDefault();
+        setIsLoggedIn(false);
+        setAuthUser(null);
+    }
 
     // const submitHandler = () => {
-    //     setLogin(username("Kevin"), loggedin(true))
+    //     logIn();
     // }
 
     const background = 'https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1920'
@@ -20,7 +40,7 @@ const LoginPage = () => {
             height: '50vw'
         }}>
             <h1 className='text-center text-white'>VOC Tracker</h1>
-            <Form onSubmit={() => submitHandler()} className='p-5' style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
+            <Form onSubmit={(e) => logIn(e)} className='p-5' style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
                 <p className='text-center'>LOGIN</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

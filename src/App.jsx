@@ -8,30 +8,30 @@ import FullComments from './components/FullComments'
 import Home from './Pages/Home'
 import LoginPage from './Pages/LoginPage'
 
-import { LoginContext, CSATContext } from './Contexts/Contexts'
+import { CSATContext } from './Contexts/Contexts'
+import { AuthProvider } from './Contexts/AuthContext'
 
 function App() {
 
-  const [Login, setLogin] = useState({username: "", loggedin: false});
   const [avgCsat, setAvgCsat] = useState(0);
 
   return (
     <>
-      <LoginContext.Provider value={{ Login, setLogin }}>
-      <CSATContext.Provider value={{ avgCsat, setAvgCsat }}>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home/>} />
+      <AuthProvider>
+        <Router>
+          <Header />
+          <CSATContext.Provider value={{ avgCsat, setAvgCsat }}>
+          <Routes>
           <Route index element={<Home/>} />
-          <Route path="/home" element={<Home/>} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="full-stats" element={<FullStats />} />
-          <Route path="full-comments" element={<FullComments />} />
-        </Routes>
-      </Router>
-      </CSATContext.Provider>
-      </LoginContext.Provider>
+            <Route path="/" element={<Home/>} />
+            <Route path="/home" element={<Home/>} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="full-stats" element={<FullStats />} />
+            <Route path="full-comments" element={<FullComments />} />
+          </Routes>
+          </CSATContext.Provider>
+        </Router>
+      </AuthProvider>
     </>
   )
 }

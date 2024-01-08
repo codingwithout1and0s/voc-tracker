@@ -1,11 +1,18 @@
-import { useContext } from 'react'
-import { LoginContext } from '../Contexts/Contexts'
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../Contexts/AuthContext'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { ImStatsBars } from "react-icons/im";
 
 const Header = () => {
-    const { Login } = useContext(LoginContext);
+    const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
+
+    const logOut = (e) => {
+        e.preventDefault();
+        setIsLoggedIn(false);
+        setAuthUser(null);
+    }
+
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark" className='mb-5'>
@@ -13,16 +20,22 @@ const Header = () => {
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
                     <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link><Link to="/full-stats">Stats</Link></Nav.Link>
-                        <Nav.Link><Link to="/full-comments">Comments</Link></Nav.Link>
+                        <Nav.Link href="/full-stats">Stats</Nav.Link>
+                        <Nav.Link href="/full-comments">Comments</Nav.Link>
                     </Nav>
+                    {isLoggedIn ?
                         <Navbar.Text className="justify-content-end">
-                            <NavDropdown title={Login.loggedin ? Login.username : "Login"} id="navbarScrollingDropdown" className='d-inline'>
-                                <NavDropdown.Item href="#action3">
+                            <NavDropdown title={authUser.Name} id="navbarScrollingDropdown" className='d-inline'>
+                                <NavDropdown.Item onClick={(e) => logOut(e)}>
                                     Logout
-                                </NavDropdown.Item>
+                                </NavDropdown.Item> 
                             </NavDropdown>
                         </Navbar.Text>
+                        :
+                        <Navbar.Text className="justify-content-end">
+                            <Link to="/login">Login</Link>
+                        </Navbar.Text>
+                    }
                 </Container>
             </Navbar>
         </>
