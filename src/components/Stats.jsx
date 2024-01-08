@@ -1,12 +1,11 @@
-import { useContext } from 'react'
-import { CSATContext } from '../Contexts/Contexts';
-import { useNavigate } from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
+import { useCsatContext } from '../Contexts/CsatContext'
+import { useNavigate } from "react-router-dom"
+import { Container, Row, Col } from 'react-bootstrap'
 import Progress from 'react-circle-progress-bar'
 
 const Stats = () => {
 
-    const { avgCsat } = useContext(CSATContext);
+    const { avgCsat } = useCsatContext;
 
     const subtitle_bar1 = `${avgCsat.toFixed(2)} / 5.00`
     const subtitle_bar2 = `${avgCsat.toFixed(2)} / 5.00`

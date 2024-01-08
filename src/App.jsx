@@ -8,19 +8,20 @@ import FullComments from './components/FullComments'
 import Home from './Pages/Home'
 import LoginPage from './Pages/LoginPage'
 
-import { CSATContext } from './Contexts/Contexts'
+//import { CSATContext } from './Contexts/Contexts'
+import { CsatProvider } from './Contexts/CsatContext'
 import { AuthProvider } from './Contexts/AuthContext'
 
 function App() {
 
-  const [avgCsat, setAvgCsat] = useState(0);
+  //const [avgCsat, setAvgCsat] = useState(0);
 
   return (
     <>
       <AuthProvider>
         <Router>
           <Header />
-          <CSATContext.Provider value={{ avgCsat, setAvgCsat }}>
+          <CsatProvider>
           <Routes>
           <Route index element={<Home/>} />
             <Route path="/" element={<Home/>} />
@@ -29,7 +30,7 @@ function App() {
             <Route path="full-stats" element={<FullStats />} />
             <Route path="full-comments" element={<FullComments />} />
           </Routes>
-          </CSATContext.Provider>
+          </CsatProvider>
         </Router>
       </AuthProvider>
     </>
