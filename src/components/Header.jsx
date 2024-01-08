@@ -19,10 +19,11 @@ const Header = () => {
                 <Container>
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
                     <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
-                    <Nav className="me-auto">
+                    {isLoggedIn && <Nav className="me-auto">
                         <Nav.Link href="/full-stats">Stats</Nav.Link>
                         <Nav.Link href="/full-comments">Comments</Nav.Link>
                     </Nav>
+                    }
                     {isLoggedIn ?
                         <Navbar.Text className="justify-content-end">
                             <NavDropdown title={authUser.Name} id="navbarScrollingDropdown" className='d-inline'>

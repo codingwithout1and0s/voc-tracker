@@ -43,14 +43,14 @@ const Comments = () => {
     const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
 
     return (
-        <div 
+        <section 
             className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}
             onClick={handleClick}
         >
             {/* {rowData.map((item) => <p>CSAT: {item.CSAT}</p>)} */}
             <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
-        </div>
+        </section>
     )
 }
 

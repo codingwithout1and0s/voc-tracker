@@ -20,26 +20,16 @@ const LoginPage = () => {
         // }
     }
 
-    const logOut = (e) => {
-        e.preventDefault();
-        setIsLoggedIn(false);
-        setAuthUser(null);
-    }
-
-    // const submitHandler = () => {
-    //     logIn();
-    // }
-
-    const background = 'https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1920'
+    const background = 'https://images.pexels.com/photos/2451566/pexels-photo-2451566.jpeg?auto=compress&cs=tinysrgb&w=1920'
 
     return (
-        <div className='p-5 border border-1 d-flex flex-column justify-content-center text-white' style={{  
+        <div className='p-5 d-flex flex-column justify-content-center text-white' style={{  
             backgroundImage: `url(${background})`, 
             backgroundSize: 'cover',
             marginTop: '-50px',
             height: '50vw'
         }}>
-            <h1 className='text-center text-white'>VOC Tracker</h1>
+            <h1 className='text-center text-white main-title'>VOC Tracker</h1>
             <Form onSubmit={(e) => logIn(e)} className='p-5' style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
                 <p className='text-center'>LOGIN</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

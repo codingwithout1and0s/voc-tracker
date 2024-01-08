@@ -23,7 +23,7 @@ const Stats = () => {
     const prog3 = (4 / 5) * 100;
 
     return (
-        <div onClick={handleClick}>
+        <section onClick={handleClick}>
             <Container fluid className='mb-2 bg-secondary py-3'>
                 <Row className='text-center text-white'>
                     <Col>
@@ -40,7 +40,7 @@ const Stats = () => {
                     </Col>
                 </Row>
             </Container>
-        </div>
+        </section>
     );
 }
 
