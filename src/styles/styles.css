@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* LOGIN PAGE */
 .main-title {
     font-size: 7rem;
