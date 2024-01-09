@@ -5,7 +5,7 @@ import Progress from 'react-circle-progress-bar'
 
 const Stats = () => {
 
-    const { avgCsat } = useCsatContext;
+    const { avgCsat } = useCsatContext();
 
     const subtitle_bar1 = `${avgCsat.toFixed(2)} / 5.00`
     const subtitle_bar2 = `${avgCsat.toFixed(2)} / 5.00`

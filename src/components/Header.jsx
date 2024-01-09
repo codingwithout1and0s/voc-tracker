@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';

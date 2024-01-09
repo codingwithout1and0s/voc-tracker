@@ -8,7 +8,7 @@ export function useCsatContext(){
 
 export function CsatProvider(props) {
     const [avgCsat, setAvgCsat] = useState(0);
-    const [csatDataPoints, setCsatDataPoints] = useState({});
+    const [csatDataPoints, setCsatDataPoints] = useState([]);
 
     const value = {
         avgCsat,

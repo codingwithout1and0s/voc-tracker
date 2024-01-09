@@ -7,7 +7,7 @@ import { Form, Button } from 'react-bootstrap'
 
 const LoginPage = () => {
 
-    const { authUser, setAuthUser, setIsLoggedIn } = useAuth();
+    const { setAuthUser, setIsLoggedIn } = useAuth();
 
     const userRef = useRef();
     const errRef = useRef();

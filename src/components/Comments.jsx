@@ -7,7 +7,7 @@ import "ag-grid-community/styles/ag-theme-quartz.css" // Theme
 
 const Comments = () => {
 
-    const { setAvgCsat } = useCsatContext();
+    const { setAvgCsat, setCsatDataPoints, csatDataPoints } = useCsatContext();
 
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([
@@ -22,7 +22,7 @@ const Comments = () => {
     // Column Definitions: Defines & controls grid columns.
     const [colDefs, setColDefs] = useState([
         { field: "Date" },
-        { field: "Voice Feedback",  width: 1450, wrapText: true, autoHeight:true },
+        { field: "Voice Feedback", width: 750, wrapText: true, autoHeight:true },
         { field: "ContactID" },
         { field: "Loan" },
         { field: "AHT" },
@@ -30,9 +30,20 @@ const Comments = () => {
 
     ]);
 
+    let addArray = [];
+
     useEffect(() => {
         setAvgCsat(currAvgCSAT);
-    },[rowData])
+
+        for (let i = 0; i < rowData.length; i++) {
+            console.log(rowData[i].CSAT)
+
+            // addArray.push(rowData[i].CSAT)
+        }
+        setCsatDataPoints([...csatDataPoints, addArray]);
+        console.log("The data points for CSAT are: " + csatDataPoints);
+        console.log("csatDataPoints length: " + csatDataPoints.length);
+    },[])
 
     const navigate = useNavigate();
 
