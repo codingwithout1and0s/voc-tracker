@@ -7,6 +7,7 @@ import FullStats from './components/FullStats'
 import FullComments from './components/FullComments'
 import Home from './Pages/Home'
 import LoginPage from './Pages/LoginPage'
+import AdminPanel from './Pages/AdminPanel'
 
 //import { CSATContext } from './Contexts/Contexts'
 import { CsatProvider } from './Contexts/CsatContext'
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/home" element={<Home/>} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin-panel" element={<AdminPanel />} />
             <Route path="full-stats" element={<FullStats />} />
             <Route path="full-comments" element={<FullComments />} />
           </Routes>
