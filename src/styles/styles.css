@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+li {
+    list-style: none;
+}
+
 /* LOGIN PAGE */
 .main-title {
     font-size: 7rem;
@@ -20,4 +24,38 @@
 .offscreen {
     position: absolute;
     left: -9999px;
+}
+
+/* ADMIN PANEL */
+
+#burger-button {
+    display: inline-block;
+    align-self:flex-end;
+    padding: 1px 6px;
+    margin-top: 4rem;
+    color: #FFF;
+    background: none;
+    border: solid 1px #FFF;
+    border-radius: 5px;
+}
+
+#admin-panel a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#admin-panel li {
+    margin: 1.25rem 0 0 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#admin-panel li:hover {
+    background-color: rgb(255,255,255,0.5);
+}
+
+.hide-panel {
+    position: absolute;
+    left: -300px;
+    transition: margin-right 4s;
 }
