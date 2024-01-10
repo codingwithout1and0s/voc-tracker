@@ -13,17 +13,13 @@ const Stats = () => {
 
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate("/full-stats");
-    }
-
     const prog1 = (avgCsat / 5) * 100;
     const prog2 = (avgCsat / 5) * 100;
     const prog3 = (4 / 5) * 100;
 
     return (
-        <section onClick={handleClick}>
-            <Container fluid className='mb-2 bg-secondary py-3'>
+        <section onClick={() =>navigate("/full-stats")}>
+            <Container className='mb-2 py-3 bg-secondary'>
                 <Row className='text-center text-white'>
                     <Col>
                         <h4>Current CSAT</h4>

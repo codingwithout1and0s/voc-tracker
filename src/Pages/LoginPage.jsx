@@ -71,12 +71,19 @@ const LoginPage = () => {
         <section className='p-5 d-flex flex-column justify-content-center text-white' style={{  
             backgroundImage: `url(${background})`, 
             backgroundSize: 'cover',
-            marginTop: '-50px',
-            height: '50vw'
+            marginTop: '-11vh',
+            height: '100vh'
         }}>
-            <h1 className='text-center text-white main-title'>VOC Tracker</h1>
+            <h1 
+                className='text-center text-white main-title' 
+                style={{marginTop: '3rem', textShadow: '2px 7px 5px rgba(0,0,0,0.3)'}}>
+                    VOC Tracker
+            </h1>
 
-            <Form onSubmit={(e) => logIn(e)} className='p-5' style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
+            <Form 
+                onSubmit={(e) => logIn(e)} 
+                className='p-5' 
+                style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
                 <p className='text-center'>LOGIN</p>
 
                 {/* Error Msgs*/}

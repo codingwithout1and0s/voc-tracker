@@ -16,6 +16,7 @@ import ErrorPage from './Pages/ErrorPage'
 //import { CSATContext } from './Contexts/Contexts'
 import { CsatProvider } from './Contexts/CsatContext'
 import { AuthProvider } from './Contexts/AuthContext'
+import AdminSidebar from './components/AdminSidebar'
 
 function App() {
 
@@ -29,11 +30,13 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/admin-panel" element={<AdminPanel />} />
+          <Route path="/admin" element={<AdminSidebar />}>
+            <Route index path="panel" element={<AdminPanel />} />
+            <Route path="agent-settings" element={<AgentSettings />} />
+            <Route path="sl-settings" element={<SLSettings />} />
+          </Route>
           <Route path="full-stats" element={<FullStats />} />
           <Route path="full-comments" element={<FullComments />} />
-          <Route path="/admin-panel/agent-settings" element={<AgentSettings />} />
-          <Route path="/admin-panel/sl-settings" element={<SLSettings />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         </CsatProvider>

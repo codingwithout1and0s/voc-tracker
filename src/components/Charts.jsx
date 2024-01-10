@@ -54,9 +54,9 @@ const Charts = () => {
       };
 
     return (
-        <section className='mt-5'>
-          <div className='mx-5 d-flex border border-1'>
-            <p className='d-flex align-items-center my-1'>Time Range: </p>
+        <section className='mt-3'>
+          <div className='mx-5 d-flex'>
+            <p className='d-flex align-items-center'>Time Range: </p>
             <select className='mx-2 px-3'>
               <option>Daily</option>
               <option>MTD</option>
@@ -64,7 +64,7 @@ const Charts = () => {
             </select>
           </div>
 
-          <Line options={options} data={data} />;
+          <Line options={options} data={data} />
         </section>
     );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useCsatContext } from '../Contexts/CsatContext'
-import { useNavigate } from "react-router-dom"
 import { AgGridReact } from 'ag-grid-react' // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css" // Core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css" // Theme
@@ -27,7 +27,6 @@ const Comments = () => {
         { field: "Loan" },
         { field: "AHT" },
         { field: "CSAT" }
-
     ]);
 
     let addArray = [];
@@ -45,20 +44,15 @@ const Comments = () => {
         console.log("csatDataPoints length: " + csatDataPoints.length);
     },[])
 
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate("/full-comments");
-    }
-
     const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
 
     return (
         <section 
-            className="ag-theme-quartz px-5 mt-5" style={{ height: 500 }}
-            onClick={handleClick}
+            className="ag-theme-quartz px-2" 
+            style={{ height: 500 }}
         >
-            <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
+            <p className='mt-3'><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
+            <Link to="/full-comments">See more...</Link>
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </section>
     )
