@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Stats from '../components/Stats'
 import Comments from '../components/Comments'
 import Charts from '../components/Charts'
-import { Button } from 'react-bootstrap'
 
 function Home() {
   const [trending, setTrending] = useState(false);

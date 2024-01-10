@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from "react-router-dom"
 import './styles/styles.css'
 
@@ -13,15 +12,13 @@ import LoginPage from './Pages/LoginPage'
 import AdminPanel from './Pages/AdminPanel'
 import ErrorPage from './Pages/ErrorPage'
 
-//import { CSATContext } from './Contexts/Contexts'
 import { CsatProvider } from './Contexts/CsatContext'
 import { AuthProvider } from './Contexts/AuthContext'
-import AdminSidebar from './components/AdminSidebar'
 
 function App() {
 
   return (
-    <>
+    <div style={{ background:' #efeeee'}}>
       <AuthProvider>
         <Header />
         <CsatProvider>
@@ -30,8 +27,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/admin" element={<AdminSidebar />}>
-            <Route index path="panel" element={<AdminPanel />} />
+          <Route path="/admin" element={<AdminPanel />}>
             <Route path="agent-settings" element={<AgentSettings />} />
             <Route path="sl-settings" element={<SLSettings />} />
           </Route>
@@ -41,7 +37,7 @@ function App() {
         </Routes>
         </CsatProvider>
       </AuthProvider>
-    </>
+    </div>
   )
 }
 

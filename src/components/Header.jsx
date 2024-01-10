@@ -34,6 +34,8 @@ const Header = () => {
                         :
                         <Navbar.Text className="justify-content-end">
                             <Link to="/login">Login</Link>
+                            <br />
+                            <Link to="/admin">Admin</Link>
                         </Navbar.Text>
                     }
                 </Container>

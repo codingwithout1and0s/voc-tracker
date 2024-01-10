@@ -16,8 +16,8 @@ const AdminSidebar = () => {
         style={{ 
         background:'#15151A', 
         width: '250px',
-        height: '100vh',
-        marginTop: '-11vh'}}>
+        height: '100svh',
+        marginTop: '-5vh'}}>
 
         <button 
           type="button" 
