@@ -6,14 +6,18 @@ import Charts from '../components/Charts'
 function Home() {
   const [trending, setTrending] = useState(false);
   return (
-    <div>
+    <div id="home" >
         <Stats />
 
         <div className='mx-5 mt-5'>
-          <button onClick={() => setTrending(false)}>Voice Feedback</button>
+          <button 
+            onClick={() => setTrending(false)}
+            className={` btn ${!trending ? 'btn-success' : 'btn-light btn-outline-secondary'}`}
+          >
+              Voice Feedback</button>
           <button 
             onClick={() => setTrending(true)}
-            className='mx-3'
+            className={`btn mx-3 ${trending ? 'btn-success' : 'btn-light btn-outline-secondary'}`}
           >
             Trending</button>
         </div>

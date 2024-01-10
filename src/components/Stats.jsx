@@ -18,8 +18,12 @@ const Stats = () => {
     const prog3 = (4 / 5) * 100;
 
     return (
-        <section onClick={() =>navigate("/full-stats")}>
-            <Container className='mb-2 py-3 bg-secondary'>
+        <section
+            id="stats-panel"
+            className='mb-2 py-3' 
+            onClick={() =>navigate("/full-stats")}
+        >
+            <Container>
                 <Row className='text-center text-white'>
                     <Col>
                         <h4>Current CSAT</h4>

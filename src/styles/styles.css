@@ -8,6 +8,17 @@ li {
     list-style: none;
 }
 
+/* HOME PAGE */
+
+#home {
+    background: #ecebeb;
+}
+
+#home button {
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
 /* LOGIN PAGE */
 .main-title {
     font-size: 7rem;
@@ -24,6 +35,11 @@ li {
 .offscreen {
     position: absolute;
     left: -9999px;
+}
+
+/* STATS */
+#stats-panel {
+    background: #e4e3e3;
 }
 
 /* ADMIN PANEL */
