@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { Col, Row } from 'react-bootstrap'
 
 const Charts = () => {
 
@@ -54,17 +55,24 @@ const Charts = () => {
       };
 
     return (
-        <section className='mt-3'>
-          <div className='mx-5 d-flex'>
-            <p className='d-flex align-items-center'>Time Range: </p>
-            <select className='mx-2 px-3'>
-              <option>Daily</option>
-              <option>MTD</option>
-              <option>YTD</option>
-            </select>
-          </div>
-
-          <Line options={options} data={data} />
+        <section>
+          <Col className='mx-2 d-flex'>
+            <Row>
+              <h6>Time Range: </h6>
+            </Row>
+            <Row className='mx-3'>
+              <select>
+                <option>Daily</option>
+                <option>Month-To-Date</option>
+                <option>Year-To-Date</option>
+              </select>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Line options={options} data={data} />
+            </Row>
+          </Col>
         </section>
     );
 }

@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom"
 import './styles/styles.css'
 
 import Header from './components/Header'
-import FullStats from './components/FullStats'
 import FullComments from './components/FullComments'
 import AgentSettings from "./components/AgentSettings"
 import SLSettings from "./components/SLSettings"
@@ -31,7 +30,6 @@ function App() {
             <Route path="agent-settings" element={<AgentSettings />} />
             <Route path="sl-settings" element={<SLSettings />} />
           </Route>
-          <Route path="full-stats" element={<FullStats />} />
           <Route path="full-comments" element={<FullComments />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

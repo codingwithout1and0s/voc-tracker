@@ -14,12 +14,11 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="dark" data-bs-theme="dark" className='mb-5'>
+            <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
                     <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
                     {isLoggedIn && <Nav className="me-auto">
-                        <Nav.Link href="/full-stats">Stats</Nav.Link>
                         <Nav.Link href="/full-comments">Comments</Nav.Link>
                     </Nav>
                     }

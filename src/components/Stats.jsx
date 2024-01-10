@@ -1,5 +1,4 @@
 import { useCsatContext } from '../Contexts/CsatContext'
-import { useNavigate } from "react-router-dom"
 import { Container, Row, Col } from 'react-bootstrap'
 import Progress from 'react-circle-progress-bar'
 
@@ -11,18 +10,12 @@ const Stats = () => {
     const subtitle_bar2 = `${avgCsat.toFixed(2)} / 5.00`
     const subtitle_bar3 = `4.00 / 5.00`
 
-    const navigate = useNavigate();
-
     const prog1 = (avgCsat / 5) * 100;
     const prog2 = (avgCsat / 5) * 100;
     const prog3 = (4 / 5) * 100;
 
     return (
-        <section
-            id="stats-panel"
-            className='mb-2 py-3' 
-            onClick={() =>navigate("/full-stats")}
-        >
+        <section id='stats-panel' className='pt-3'>
             <Container>
                 <Row className='text-center text-white'>
                     <Col>

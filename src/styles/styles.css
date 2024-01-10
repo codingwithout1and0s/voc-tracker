@@ -11,12 +11,20 @@ li {
 /* HOME PAGE */
 
 #home {
-    background: #ecebeb;
+    background: #f1f1f1;
 }
 
 #home button {
     padding: 3px 8px;
     border-radius: 10px;
+}
+
+/* MAIN PANEL */
+#main-panel {
+    background: #FFF;
+    padding: 3rem;
+    margin: 1rem;
+    border-radius: 10px 10px 0 0;
 }
 
 /* LOGIN PAGE */

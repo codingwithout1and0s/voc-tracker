@@ -9,7 +9,7 @@ function Home() {
     <div id="home" >
         <Stats />
 
-        <div className='mx-5 mt-5'>
+        <div className='mx-5 mt-4'>
           <button 
             onClick={() => setTrending(false)}
             className={` btn ${!trending ? 'btn-success' : 'btn-light btn-outline-secondary'}`}
@@ -21,7 +21,7 @@ function Home() {
           >
             Trending</button>
         </div>
-        <div className='m-5 border border-1'>
+        <div id="main-panel" className='border border-1'>
         { !trending ? 
           <Comments /> :
           <Charts /> 

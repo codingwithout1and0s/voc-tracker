@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useCsatContext } from '../Contexts/CsatContext'
 import { AgGridReact } from 'ag-grid-react' // React Grid Logic
 import "ag-grid-community/styles/ag-grid.css" // Core CSS
-import "ag-grid-community/styles/ag-theme-quartz.css" // Theme
+import 'ag-grid-community/styles/ag-theme-balham.min.css' // Theme
 
 const Comments = () => {
 
@@ -48,10 +48,10 @@ const Comments = () => {
 
     return (
         <section 
-            className="ag-theme-quartz px-2" 
+            className="ag-theme-balham mb-5" 
             style={{ height: 500 }}
         >
-            <p className='mt-3'><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
+            <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
             <Link to="/full-comments">See more...</Link>
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </section>
