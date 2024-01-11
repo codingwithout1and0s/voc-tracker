@@ -8,6 +8,29 @@ li {
     list-style: none;
 }
 
+a:link{
+    text-decoration: none!important;
+  }
+
+/* HOME PAGE */
+
+#home {
+    background: #f1f1f1;
+}
+
+#home button {
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+/* MAIN PANEL */
+#main-panel {
+    background: #FFF;
+    padding: 3rem;
+    margin: 1rem;
+    border-radius: 10px 10px 0 0;
+}
+
 /* LOGIN PAGE */
 .main-title {
     font-size: 7rem;
@@ -26,6 +49,37 @@ li {
     left: -9999px;
 }
 
+/* Comments*/
+
+.reduce-margin-top {
+    margin-bottom: -0.7rem;
+}
+
+/* STATS */
+#stats-panel {
+    background: #e4e3e3;
+}
+
+#stats-panel .col {
+    padding: 5px 0;
+    border-left: 0;
+	border-right: 1px;
+	border-style: solid;
+	border-image: linear-gradient(to bottom, #f1f1f1, #cccccc, #f1f1f1) 1 100%;
+}
+
+#stats-panel .col:last-child {
+	border-right: 0;
+}
+
+/* #stats-panel .col {
+    border-left: solid 1px black;
+}
+
+#stats-panel .col:last-child {
+    border-right: solid 1px black;
+} */
+
 /* ADMIN PANEL */
 
 #burger-button {
@@ -42,7 +96,6 @@ li {
 
 #sidebar a {
     color: #FFF;
-    text-decoration: none;
 }
 
 #sidebar li {
