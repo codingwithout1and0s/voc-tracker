@@ -21,12 +21,12 @@ const Comments = () => {
 
     // Column Definitions: Defines & controls grid columns.
     const [colDefs, setColDefs] = useState([
-        { field: "Date" },
+        { field: "Date", width: 90 },
         { field: "Voice Feedback", width: 750, wrapText: true, autoHeight:true },
-        { field: "ContactID" },
-        { field: "Loan" },
-        { field: "AHT" },
-        { field: "CSAT" }
+        { field: "ContactID", width: 100 },
+        { field: "Loan", width: 80 },
+        { field: "AHT", width: 60 },
+        { field: "CSAT", width: 60 }
     ]);
 
     let addArray = [];

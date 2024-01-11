@@ -8,6 +8,10 @@ li {
     list-style: none;
 }
 
+a:link{
+    text-decoration: none!important;
+  }
+
 /* HOME PAGE */
 
 #home {
@@ -56,6 +60,26 @@ li {
     background: #e4e3e3;
 }
 
+#stats-panel .col {
+    padding: 5px 0;
+    border-left: 0;
+	border-right: 1px;
+	border-style: solid;
+	border-image: linear-gradient(to bottom, #f1f1f1, #cccccc, #f1f1f1) 1 100%;
+}
+
+#stats-panel .col:last-child {
+	border-right: 0;
+}
+
+/* #stats-panel .col {
+    border-left: solid 1px black;
+}
+
+#stats-panel .col:last-child {
+    border-right: solid 1px black;
+} */
+
 /* ADMIN PANEL */
 
 #burger-button {
@@ -72,7 +96,6 @@ li {
 
 #sidebar a {
     color: #FFF;
-    text-decoration: none;
 }
 
 #sidebar li {
