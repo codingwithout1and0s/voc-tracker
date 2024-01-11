@@ -52,7 +52,11 @@ const Comments = () => {
             style={{ height: 500 }}
         >
             <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
-            <Link to="/full-comments">See more...</Link>
+            <div className='d-flex reduce-margin-top'>
+                <Link to="/full-comments" className=''>Full View</Link>
+                <p style={{ marginLeft: 'auto'}}>Last updated...</p>
+            </div>
+
             <AgGridReact rowData={rowData} columnDefs={colDefs} />
         </section>
     )

@@ -45,6 +45,12 @@ li {
     left: -9999px;
 }
 
+/* Comments*/
+
+.reduce-margin-top {
+    margin-bottom: -0.7rem;
+}
+
 /* STATS */
 #stats-panel {
     background: #e4e3e3;

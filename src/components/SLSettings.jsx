@@ -5,12 +5,8 @@ function SLSettings() {
 
     return (
       <div>
-<<<<<<< HEAD
           <h1>SL Settings</h1>
           <p>Master List</p>
-=======
-          <h1> SL Settings</h1>
->>>>>>> 235d482 (Refactored)
       </div>
     );
   }
