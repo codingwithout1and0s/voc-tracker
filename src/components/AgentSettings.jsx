@@ -1,7 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Container, ListGroup } from 'react-bootstrap'
+import { AdminTitleContext } from '../Contexts/Contexts';
 
 function AgentSettings() {
+
+  const { setTitle } = useContext(AdminTitleContext);
+
+  useEffect(() => {
+    setTitle("Agent Settings");
+  }, [])
 
   const [editMode, setEditMode] = useState(false);
 
@@ -21,9 +28,9 @@ function AgentSettings() {
 
           <ListGroup className="d-flex flex-column">
             {agentArray.map((agent, index) => {
-                return <ListGroup.Item key={index}>
+                return <ListGroup.Item key={index} className='d-flex flex-row'>
                 {agent.name} <br />
-                {!editMode ? <p>{agent.email}</p> : <input type='text' placeholder={agent.email} />}
+                {editMode ?  <input type='text' placeholder={agent.email} className='mx-5'/>: <p className='mx-5'>{agent.email}</p>}
                 <button className="btn btn-danger mx-5" onClick={() => {
                   setEditMode(current => !current)}}>Edit</button>
                 <button className="mx-5">Reset Password</button>
