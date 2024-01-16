@@ -23,8 +23,9 @@ function AgentSettings() {
             {agentArray.map((agent, index) => {
                 return <ListGroup.Item key={index}>
                 {agent.name} <br />
-                {!editMode ? {agent.email} : <input type='text' placeholder={agent.email} />}
-                <button className="btn btn-danger mx-5" onClick={() = setEditMode(prev => !prev)}>Edit</button>
+                {!editMode ? <p>{agent.email}</p> : <input type='text' placeholder={agent.email} />}
+                <button className="btn btn-danger mx-5" onClick={() => {
+                  setEditMode(current => !current)}}>Edit</button>
                 <button className="mx-5">Reset Password</button>
               </ListGroup.Item>
             })}
