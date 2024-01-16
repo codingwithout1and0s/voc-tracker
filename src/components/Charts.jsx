@@ -62,7 +62,7 @@ const Charts = () => {
             </Row>
             <Row className='mx-3'>
               <select>
-                <option>Daily</option>
+                <option>Last updated</option>
                 <option>Month-To-Date</option>
                 <option>Year-To-Date</option>
               </select>

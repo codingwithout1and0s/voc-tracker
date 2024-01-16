@@ -4,7 +4,7 @@ import AdminSidebar from "../components/AdminSidebar"
 function AdminPanel() {
 
   return (
-    <div>
+    <div id="admin-panel">
         <AdminSidebar />
         <h1 className="text-center">Admin Panel</h1>
         <Outlet />

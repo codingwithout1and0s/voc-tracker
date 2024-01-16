@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar id="navbar" bg="dark" data-bs-theme="dark">
                 <Container>
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
                     <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
