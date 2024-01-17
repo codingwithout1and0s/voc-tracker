@@ -7,7 +7,7 @@ export function useAdminTitle(){
 }
 
 export function AdminTitleProvider(props) {
-    const [adminTitle, setAdminTitle] = useState("Admin Panel");
+    const [adminTitle, setAdminTitle] = useState('');
 
     const value = {
         adminTitle,

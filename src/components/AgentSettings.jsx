@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
-import { useAdminTitle } from '../Contexts/AdminTitleContext';
+import { useAdminTitle } from '../Contexts/AdminTitleContext'
+
 function AgentSettings() {
-  const { setTitle } = useAdminTitle();
+  const { setAdminTitle } = useAdminTitle();
 
   useEffect(() => {
-    setTitle("Agent Settings");
+    setAdminTitle("Agent Settings");
   }, [])
 
   const agentArray = [
