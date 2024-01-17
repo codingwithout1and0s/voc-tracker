@@ -1,16 +1,12 @@
-import { useState, useContext, useEffect } from 'react'
-import { Container, ListGroup } from 'react-bootstrap'
-import { AdminTitleContext } from '../Contexts/Contexts';
-
+import { useEffect } from 'react'
+import { Container } from 'react-bootstrap'
+import { useAdminTitle } from '../Contexts/AdminTitleContext';
 function AgentSettings() {
-
-  const { setTitle } = useContext(AdminTitleContext);
+  const { setTitle } = useAdminTitle();
 
   useEffect(() => {
     setTitle("Agent Settings");
   }, [])
-
-  const [editMode, setEditMode] = useState(false);
 
   const agentArray = [
     {"name": "Mike", "email": "mike@examples.com"},
@@ -24,19 +20,11 @@ function AgentSettings() {
     <section id="agent-settings">
       <Container fluid>
           <div id="agent-list-box">
-          <p>Agent List</p>
-
-          <ListGroup className="d-flex flex-column">
+            <Select>
             {agentArray.map((agent, index) => {
-                return <ListGroup.Item key={index} className='d-flex flex-row'>
-                {agent.name} <br />
-                {editMode ?  <input type='text' placeholder={agent.email} className='mx-5'/>: <p className='mx-5'>{agent.email}</p>}
-                <button className="btn btn-danger mx-5" onClick={() => {
-                  setEditMode(current => !current)}}>Edit</button>
-                <button className="mx-5">Reset Password</button>
-              </ListGroup.Item>
+                return <Option key={index}>{agent.name}</Option>
             })}
-          </ListGroup>
+            </Select>
           </div>
         </Container>
     </section>

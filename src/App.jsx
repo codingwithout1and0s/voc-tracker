@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from 'react-router-dom'
 import './styles/styles.css'
 
 import Header from './components/Header'
@@ -14,18 +13,16 @@ import ErrorPage from './Pages/ErrorPage'
 
 import { CsatProvider } from './Contexts/CsatContext'
 import { AuthProvider } from './Contexts/AuthContext'
-import { AdminTitleContext } from "./Contexts/Contexts"
+import { AdminTitleProvider } from './Contexts/AdminTitleContext'
 
 function App() {
-
-  const [title, setTitle] = useState("Admin Panel"); 
 
   return (
     <div style={{ background:' #efeeee'}}>
       <AuthProvider>
         <Header />
         <CsatProvider>
-        <AdminTitleContext.Provider title={title} setTitle={setTitle}>
+        <AdminTitleProvider>
         <Routes>
           <Route index element={<Home/>} />
           <Route path="/" element={<Home/>} />
@@ -38,7 +35,7 @@ function App() {
           <Route path="full-comments" element={<FullComments />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-        </AdminTitleContext.Provider>
+        </AdminTitleProvider>
         </CsatProvider>
       </AuthProvider>
     </div>
