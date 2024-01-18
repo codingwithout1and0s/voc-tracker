@@ -3,8 +3,8 @@ import './styles/styles.css'
 
 import Header from './components/Header'
 import FullComments from './components/FullComments'
-import AgentSettings from "./components/AgentSettings"
-import SLSettings from "./components/SLSettings"
+import Settings from './Pages/Settings'
+import VocOverview from './Pages/VocOverview'
 
 import Home from './Pages/Home'
 import LoginPage from './Pages/LoginPage'
@@ -29,15 +29,15 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/admin" element={<AdminPanel />}>
-            <Route path="agent-settings" element={<AgentSettings />} />
-            <Route path="sl-settings" element={<SLSettings />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="voc-overview" element={<VocOverview />} />
           </Route>
           <Route path="full-comments" element={<FullComments />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         </AdminTitleProvider>
         </CsatProvider>
-      </AuthProvider>
+        </AuthProvider>
     </div>
   )
 }

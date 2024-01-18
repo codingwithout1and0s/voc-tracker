@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { useAdminTitle } from '../Contexts/AdminTitleContext'
 
-function AgentSettings() {
+function VocOverview() {
   const { setAdminTitle } = useAdminTitle();
 
   useEffect(() => {
-    setAdminTitle("Agent Settings");
+    setAdminTitle("VOC Overview");
   }, [])
 
   const agentArray = [
@@ -21,16 +21,17 @@ function AgentSettings() {
     <section id="agent-settings">
       <Container fluid>
           <div id="agent-list-box">
-            <Select>
-            {agentArray.map((agent, index) => {
-                return <Option key={index}>{agent.name}</Option>
-            })}
-            </Select>
+            <select>
+              <option disabled selected="selected">Select an Agent</option>
+              {agentArray.map((agent, index) => {
+                return <option key={index}>{agent.name}</option>
+              })}
+            </select>
           </div>
         </Container>
     </section>
   );
 }
 
-  export default AgentSettings
+  export default VocOverview
   

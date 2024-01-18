@@ -27,8 +27,8 @@ const AdminSidebar = () => {
 
           <h3 className="py-3 text-center">Sidebar</h3>
           <ul>
-            <li><Link to="sl-settings">Service Leaders</Link></li>
-            <li><Link to="agent-settings">Agents</Link></li>
+            <li><Link to="voc-overview">VOC Overview</Link></li>
+            <li><Link to="settings">Settings</Link></li>
           </ul>
       </aside>
   )

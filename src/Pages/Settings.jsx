@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { Container, ListGroup } from 'react-bootstrap'
 import { useAdminTitle } from '../Contexts/AdminTitleContext'
 
-function SLSettings() {
+function Settings() {
   const { setAdminTitle } = useAdminTitle();
 
   useEffect(() => {
-    setAdminTitle("SLs Settings");
+    setAdminTitle("Settings");
   }, [])
 
   const [editMode, setEditMode] = useState(false);
@@ -42,5 +42,5 @@ function SLSettings() {
   );
 }
 
-export default SLSettings
+export default Settings
 
