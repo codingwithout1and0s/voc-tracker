@@ -68,22 +68,17 @@ const LoginPage = () => {
     const background = 'https://images.pexels.com/photos/2451566/pexels-photo-2451566.jpeg?auto=compress&cs=tinysrgb&w=1920'
 
     return (
-        <section className='p-5 d-flex flex-column justify-content-center text-white' style={{  
+        <section id="login" className='p-5 d-flex flex-column justify-content-center text-white' style={{  
             backgroundImage: `url(${background})`, 
             backgroundSize: 'cover',
             marginTop: '-11vh',
             height: '100vh'
         }}>
-            <h1 
-                className='text-center text-white main-title' 
-                style={{marginTop: '3rem', textShadow: '2px 7px 5px rgba(0,0,0,0.3)'}}>
-                    VOC Tracker
+            <h1 className='text-center text-white main-title'>
+                VOC Tracker
             </h1>
 
-            <Form 
-                onSubmit={(e) => logIn(e)} 
-                className='p-5' 
-                style={{ maxWidth: '450px', backgroundColor: 'rgba(0,0,0,0.5', margin: 'auto'}}>
+            <Form onSubmit={(e) => logIn(e)} className='p-5'>
                 <p className='text-center'>LOGIN</p>
 
                 {/* Error Msgs*/}
