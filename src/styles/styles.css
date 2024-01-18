@@ -9,8 +9,8 @@ li {
 }
 
 a:link{
-    text-decoration: none!important;
-  }
+    text-decoration: none;
+}
 
 /* Header */
 #navbar {
@@ -45,7 +45,7 @@ a:link{
 
 #login Form {
     max-width: 450px;
-    background-color: 'rgba(0,0,0,0.5';
+    background-color: rgba(0,0,0,0.5);
     margin: auto;
 }
 
