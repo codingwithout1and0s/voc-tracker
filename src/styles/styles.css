@@ -90,8 +90,9 @@ a:link{
 #burger-button {
     display: inline-block;
     align-self:flex-end;
-    padding: 1px 6px;
+    padding: 1px 6px ;
     margin-top: 4rem;
+    margin-right: 0.5rem;
     color: #FFF;
     background: none;
     border: solid 1px #FFF;
@@ -100,6 +101,10 @@ a:link{
 }
 
 #sidebar {
+    background:#15151A; 
+    width: 200px;
+    height: 100svh;
+    margin-top: -5vh;
     position: fixed;
     z-index: 99;
 }
@@ -120,7 +125,7 @@ a:link{
 
 .hide-panel {
     position: absolute;
-    left: -200px;
+    left: -160px;
     transition: margin-right 4s;
 }
 

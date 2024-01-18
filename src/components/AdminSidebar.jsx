@@ -12,12 +12,7 @@ const AdminSidebar = () => {
   return (
     <aside 
         id="sidebar" 
-        className={`px-3 text-white d-flex flex-column ${clicked ? "hide-panel" : ""}`} 
-        style={{ 
-        background:'#15151A', 
-        width: '250px',
-        height: '100svh',
-        marginTop: '-5vh'}}>
+        className={`px-1 text-white d-flex flex-column ${clicked ? "hide-panel" : ""}`} >
 
         <button 
           type="button" 
