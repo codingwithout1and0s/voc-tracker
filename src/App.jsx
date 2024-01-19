@@ -18,7 +18,7 @@ import { AdminTitleProvider } from './Contexts/AdminTitleContext'
 function App() {
 
   return (
-    <div style={{ background:' #efeeee'}}>
+    <div id="App">
       <AuthProvider>
         <Header />
         <CsatProvider>

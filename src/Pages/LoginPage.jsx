@@ -68,12 +68,16 @@ const LoginPage = () => {
     const background = 'https://images.pexels.com/photos/2451566/pexels-photo-2451566.jpeg?auto=compress&cs=tinysrgb&w=1920'
 
     return (
-        <section id="login" className='p-5 d-flex flex-column justify-content-center text-white' style={{  
-            backgroundImage: `url(${background})`, 
-            backgroundSize: 'cover',
-            marginTop: '-11vh',
-            height: '100vh'
-        }}>
+        <section 
+            id="login"
+            className='p-5 d-flex flex-column justify-content-center text-white' 
+            style={{  
+                backgroundImage: `url(${background})`, 
+                backgroundSize: 'cover',
+                marginTop: '-11vh',
+                height: '100vh'
+            }}
+        >
             <h1 className='text-center text-white main-title'>
                 VOC Tracker
             </h1>

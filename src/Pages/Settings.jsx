@@ -20,7 +20,7 @@ function Settings() {
     {"name": "George", "email": "george@examples.com"}];
 
   return (
-    <section id="agent-settings">
+    <section id="settings">
       <Container fluid>
           <div id="agent-list-box">
           <p>Agent List</p>
