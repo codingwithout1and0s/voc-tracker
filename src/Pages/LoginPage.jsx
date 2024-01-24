@@ -23,42 +23,56 @@ const LoginPage = () => {
 
     useEffect(() => {
         setErrMsg('');
+        console.log("effect password:" + password);
+        console.log("effect username: " + user);
     }, [user, password])
 
 
     const navigate = useNavigate();
 
-    const logIn = async (e) => {
+    const logIn = (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post(LOGIN_URL, JSON.stringify({user, password}),
-            {
-                headers: { 'Content-Type': 'application/json'},
-                withCredentials: true
-            });
-            console.log(JSON.stringify(response?.data));
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setSuccess(true);
-            setUser('');
-            setPassword('');
+        console.log("login password:" + password);
+        console.log("login username: " + user);
+
+        if (user === "justin.kolthof@finastra.com" && password=="123") {
+            console.log("successful login");
+            setAuthUser(user);
             setIsLoggedIn(true);
-            setAuthUser({
-                Name: 'Kevin'
-            });
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status ===  400) {
-                setErrMsg('Missing Username of Password');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Unauthorized');
-            } else {
-                setErrMsg('Login Failed');
-            }
-            errRef.current.focus();
+            navigate("/home");
+        } else {
+            console.log("unsuccessful login");
         }
+
+        // try {
+        //     const response = await axios.post(LOGIN_URL, JSON.stringify({user, password}),
+        //     {
+        //         headers: { 'Content-Type': 'application/json'},
+        //         withCredentials: true
+        //     });
+        //     console.log(JSON.stringify(response?.data));
+        //     const accessToken = response?.data?.accessToken;
+        //     const roles = response?.data?.roles;
+        //     setSuccess(true);
+        //     setUser('');
+        //     setPassword('');
+        //     setIsLoggedIn(true);
+        //     setAuthUser({
+        //         Name: 'Kevin'
+        //     });
+        // } catch (err) {
+        //     if (!err?.response) {
+        //         setErrMsg('No Server Response');
+        //     } else if (err.response?.status ===  400) {
+        //         setErrMsg('Missing Username of Password');
+        //     } else if (err.response?.status === 400) {
+        //         setErrMsg('Unauthorized');
+        //     } else {
+        //         setErrMsg('Login Failed');
+        //     }
+        //     errRef.current.focus();
+        // }
 
         // if(authUser != null){
         //     navigate("/home");
