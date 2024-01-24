@@ -7,7 +7,7 @@ import 'ag-grid-community/styles/ag-theme-balham.min.css' // Theme
 
 const FullComments = () => {
 
-    const { setAvgCsat, setCsatDataPoints, csatDataPoints } = useCsatContext();
+    const { setCurrCsat, setCsatDataPoints, csatDataPoints } = useCsatContext();
 
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([
@@ -31,7 +31,7 @@ const FullComments = () => {
     let addArray = [];
 
     useEffect(() => {
-        setAvgCsat(currAvgCSAT);
+        setCurrCsat(currAvgCSAT);
 
         for (let i = 0; i < rowData.length; i++) {
             console.log(rowData[i].CSAT)

@@ -4,14 +4,14 @@ import Progress from 'react-circle-progress-bar'
 
 const Stats = () => {
 
-    const { avgCsat } = useCsatContext();
+    const { currCsat } = useCsatContext();
 
-    const subtitle_bar1 = `${avgCsat.toFixed(2)} / 5.00`
-    const subtitle_bar2 = `${avgCsat.toFixed(2)} / 5.00`
+    const subtitle_bar1 = `${currCsat.toFixed(2)} / 5.00`
+    const subtitle_bar2 = `${currCsat.toFixed(2)} / 5.00`
     const subtitle_bar3 = `4.00 / 5.00`
 
-    const prog1 = (avgCsat / 5) * 100;
-    const prog2 = (avgCsat / 5) * 100;
+    const prog1 = (currCsat / 5) * 100;
+    const prog2 = (currCsat / 5) * 100;
     const prog3 = (4 / 5) * 100;
 
     return (

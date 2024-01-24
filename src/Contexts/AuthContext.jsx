@@ -8,11 +8,14 @@ export function useAuth(){
 
 export function AuthProvider(props) {
     const [authUser, setAuthUser] = useState(null);
+    const [roleUser, setRoleUser] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const value = {
         authUser,
         setAuthUser,
+        roleUser,
+        setRoleUser,
         isLoggedIn,
         setIsLoggedIn
     }
