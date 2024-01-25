@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Contexts/AuthContext'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
@@ -12,6 +13,10 @@ const Header = () => {
         setAuthUser(null);
     }
 
+    useEffect(() => {
+        console.log("user: " + authUser);
+    }, [])
+
     return (
         <>
             <Navbar id="navbar" bg="dark" data-bs-theme="dark">
@@ -24,7 +29,7 @@ const Header = () => {
                     }
                     {isLoggedIn ?
                         <Navbar.Text className="justify-content-end">
-                            <NavDropdown title={authUser.Name} id="navbarScrollingDropdown" className='d-inline'>
+                            <NavDropdown title={authUser} id="navbarScrollingDropdown" className='d-inline'>
                                 <NavDropdown.Item onClick={(e) => logOut(e)}>
                                     Logout
                                 </NavDropdown.Item> 
