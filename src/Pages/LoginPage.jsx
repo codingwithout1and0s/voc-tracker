@@ -36,7 +36,7 @@ const LoginPage = () => {
         console.log("login password:" + password);
         console.log("login username: " + user);
 
-        if (user === "justin.kolthof@finastra.com" && password=="123") {
+        if (user === "justin.kolthof@example.com" && password=="123") {
             console.log("successful login");
             setAuthUser(user);
             setIsLoggedIn(true);
