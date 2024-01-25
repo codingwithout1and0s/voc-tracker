@@ -15,6 +15,7 @@ const Header = () => {
 
     useEffect(() => {
         console.log("user: " + authUser);
+        console.log("Logged in: " + isLoggedIn);
     }, [])
 
     return (
