@@ -13,8 +13,6 @@ const Comments = () => {
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([]);
 
-    
-
     // Column Definitions: Defines & controls grid columns.
     const [colDefs, setColDefs] = useState([
         { field: "Date", width: 90 },
@@ -27,8 +25,10 @@ const Comments = () => {
     // let addArray = [];
 
     useEffect(() => {
+        
         setRowData(myData.agent);
         setCurrCsat(currAvgCSAT);
+        
 
         // for (let i = 0; i < rowData.length; i++) {
         //     console.log(rowData[i].CSAT)
@@ -39,9 +39,7 @@ const Comments = () => {
         // console.log("The data points for CSAT are: " + csatDataPoints);
         // console.log("csatDataPoints length: " + csatDataPoints.length);
     },[])
-
     const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
-
     return (
         <section 
             className="ag-theme-balham mb-5" 
