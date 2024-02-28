@@ -43,19 +43,36 @@ a:link{
 
 /* LOGIN PAGE */
 
+#login {
+    background-color: #313131;
+    font-size: 0.75rem;
+}
+
 #login h1 {
-    margin-top: 3rem;
+    margin-top: 5rem;
     text-shadow: '2px 7px 5px rgba(0,0,0,0.3);
 }
 
 #login Form {
     max-width: 450px;
-    background-color: rgba(0,0,0,0.5);
     margin: auto;
+    background-color: rgba(0,0,0,0.5);
 }
 
+#login Form > p:first-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#login Form > Button {
+    width: 150px;
+    height: 40px;
+    font-size: 0.75rem;
+}
+
+
 .main-title {
-    font-size: 7rem;
+    font-size: 4rem;
 }
 
 .errmsg {

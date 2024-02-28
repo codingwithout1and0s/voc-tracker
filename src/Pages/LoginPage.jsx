@@ -96,14 +96,14 @@ const LoginPage = () => {
                 VOC Tracker
             </h1>
 
-            <Form onSubmit={(e) => logIn(e)} className='p-5'>
+            <Form onSubmit={(e) => logIn(e)} className='p-2'>
                 <p className='text-center'>LOGIN</p>
 
                 {/* Error Msgs*/}
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live='assertive'>{errMsg}</p> 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label htmlFor='email'>Email address</Form.Label>
+                    <Form.Label htmlFor='email'>Username</Form.Label>
                     <Form.Control 
                         type="email" 
                         id="email" 
@@ -127,7 +127,7 @@ const LoginPage = () => {
                 Forgot Password
                 </Button>
                 <Button variant="primary" type="submit"  className='mx-5'>
-                Submit
+                Login
                 </Button>
             </Form>
         </section>

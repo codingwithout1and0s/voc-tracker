@@ -7,7 +7,7 @@ import 'ag-grid-community/styles/ag-theme-balham.min.css' // Theme
 
 const Comments = () => {
 
-    const { setCurrCsat, setCsatDataPoints, csatDataPoints, csatObject, setCsatObject } = useCsatContext();
+    const { setCurrCsat, setCsatDataPoints, csatDataPoints, dateDataPoints, setDateDataPoints } = useCsatContext();
 
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([
@@ -28,27 +28,25 @@ const Comments = () => {
         { field: "CSAT", width: 60 }
     ]);
 
-    // setCsatObject(prevState => ({
-    //     csatObject: [...prevState, rowData.CSAT]
-    // }));
+    const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
 
-    let addArray = 0;
+    for (let i = 0; i < rowData.length; i++) {
+        // console.log("rowData date Index: " + i + ", " + "rowData date: " + rowData[i].Date)
+        // console.log("rowData csat Index: " + i + ", " + "rowData csat: " + rowData[i].CSAT)
+
+        setCsatDataPoints(rowData[i].CSAT);
+        setDateDataPoints(rowData[i].Date);
+        //console.log("The data points for CSAT are: " + csatDataPoints[i]);
+    }
 
     useEffect(() => {
-        console.log("Valuae of csatObject is: " + csatObject);
         setCurrCsat(currAvgCSAT);
-
-        for (let i = 0; i < rowData.length; i++) {
-            console.log("rowData csat: " + rowData[i].CSAT)
-
-            // addArray.push(rowData[i].CSAT)
-        }
-        setCsatDataPoints([...csatDataPoints, addArray]);
-        console.log("The data points for CSAT are: " + csatDataPoints);
-        console.log("csatDataPoints length: " + csatDataPoints.length);
     },[])
 
-    const currAvgCSAT = rowData.reduce((sum, curr) => sum + curr.CSAT, 0) /rowData.length;
+    useEffect(() => {       
+        console.log("Date Data Points: ", dateDataPoints);
+        console.log("csatDataPoints: ", csatDataPoints);
+    },[rowData])
 
     return (
         <section 
@@ -58,7 +56,7 @@ const Comments = () => {
             <p><b>AVG CSAT: {currAvgCSAT} / 5.00</b></p>
             <div className='d-flex reduce-margin-top'>
                 <Link to="/full-comments" className=''>Full View</Link>
-                <p style={{ marginLeft: 'auto'}}>Last updated...</p>
+                <p style={{ marginLeft: 'auto'}}>Last updated... October 4, 2023</p>
             </div>
 
             <AgGridReact rowData={rowData} columnDefs={colDefs} />

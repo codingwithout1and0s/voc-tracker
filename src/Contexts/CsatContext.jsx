@@ -11,7 +11,7 @@ export function CsatProvider(props) {
     const [mtdCsat, setMtdCsat] = useState(0);
     const [ytdCsat, setYtdCsat] = useState(0);
     const [csatDataPoints, setCsatDataPoints] = useState([]);
-    const [csatObject, setCsatObject] = useState([]);
+    const [dateDataPoints, setDateDataPoints] = useState([]);
 
     const value = {
         currCsat,
@@ -22,8 +22,8 @@ export function CsatProvider(props) {
         setYtdCsat,
         csatDataPoints,
         setCsatDataPoints,
-        csatObject,
-        setCsatObject
+        dateDataPoints,
+        setDateDataPoints
     }
 
     return(
