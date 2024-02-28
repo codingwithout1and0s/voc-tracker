@@ -7,7 +7,7 @@ import 'ag-grid-community/styles/ag-theme-balham.min.css' // Theme
 
 const Comments = () => {
 
-    const { setCurrCsat, setCsatDataPoints, csatDataPoints } = useCsatContext();
+    const { setCurrCsat, setCsatDataPoints, csatDataPoints, csatObject, setCsatObject } = useCsatContext();
 
     // Row Data: The data to be displayed.
     const [rowData, setRowData] = useState([
@@ -28,13 +28,18 @@ const Comments = () => {
         { field: "CSAT", width: 60 }
     ]);
 
-    let addArray = [];
+    // setCsatObject(prevState => ({
+    //     csatObject: [...prevState, rowData.CSAT]
+    // }));
+
+    let addArray = 0;
 
     useEffect(() => {
+        console.log("Valuae of csatObject is: " + csatObject);
         setCurrCsat(currAvgCSAT);
 
         for (let i = 0; i < rowData.length; i++) {
-            console.log(rowData[i].CSAT)
+            console.log("rowData csat: " + rowData[i].CSAT)
 
             // addArray.push(rowData[i].CSAT)
         }

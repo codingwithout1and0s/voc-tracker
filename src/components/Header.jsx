@@ -13,21 +13,12 @@ const Header = () => {
         setAuthUser(null);
     }
 
-    useEffect(() => {
-        console.log("user: " + authUser);
-        console.log("Logged in: " + isLoggedIn);
-    }, [])
-
     return (
         <>
             <Navbar id="navbar" bg="dark" data-bs-theme="dark">
                 <Container>
                     <ImStatsBars style={{ color: 'blue', fontSize: '2rem' }} />
                     <Navbar.Brand href="/home" className='mx-5'>VOC Tracker</Navbar.Brand>
-                    {isLoggedIn && <Nav className="me-auto">
-                        <Nav.Link href="/full-comments">Comments</Nav.Link>
-                    </Nav>
-                    }
                     {isLoggedIn ?
                         <Navbar.Text className="justify-content-end">
                             <NavDropdown title={authUser} id="navbarScrollingDropdown" className='d-inline'>

@@ -38,8 +38,9 @@ const Charts = () => {
         },
       };
       
+      const agentStats = {}
       const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'];
-      const scores = [5.00, 1.00, 3.00, 5.00, 4.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00 ] 
+      const scores = [5.00, 1.00, 3.00, 5.00, 4.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00, 5.00 ];
 
       const data = {
         labels,
